@@ -1,0 +1,19 @@
+collections:
+  authors:
+    output: true
+# default is set by scope - values pair
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "authors" # pages, posts, drafts or collections
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

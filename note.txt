@@ -1,0 +1,141 @@
+Huzzii WEB:
+  https://pchaanthony.github.io/
+    work! great!
+
+jekyllrb:
+Ruby: it needs Ruby version 2.5.0 or higher
+  I am using rbenv, check available version
+    rbenv install --list
+      2.6.8
+      2.7.4
+      3.0.2
+    as v3 might be too different, use 2.7.4
+    ruby -v
+      ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-darwin15]
+    $ rbenv local 2.7.4
+    rbenv: version `2.7.4' not installed
+    OPS, not install yet, let's go with 2.6.5 which I know exists.
+    rbenv local 2.6.5
+    ruby -v
+    ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin20]
+    done
+
+Install jekyll:
+  gem install jekyll bundler
+  ops...
+    Permission denied @ dir_s_mkdir - /Users/Anthony/....
+    $ whoami
+    Anthony
+    sudo chown -R Anthony $HOME/.rbenv
+    gem install jekyll bundler
+      take long time...
+?? create jekyll project ??
+  jekyll new web
+  start
+    cd web
+    bundle exec jekyll serve
+    http://127.0.0.1:4000/
+
+from root:
+  jekyll serve = jekyll build + runs it on a local web server at http://localhost:4000
+
+Learning: on jekyll 4.2.2
+  Liquid:
+    {{ page.title }}
+
+    {% if page.show_sidebar %}
+    <div class="sidebar">
+      sidebar content
+    </div>
+    {% endif %}
+
+    {{ "hi" | capitalize }}
+
+    front matter
+      put below at top
+      ---
+      # front matter tells Jekyll to process Liquid
+      ---
+      have to have two --- at beginning of file to notice jekyll process
+
+  layout:
+    default layout at _layouts/default.html
+
+  md:
+    just write the md with front matter and using layout, page can be created easily, bravo.
+
+  navigation
+    cane be done via include:
+      _includes/navigation.html
+      add navigation here for changing page.
+
+  data:
+    data is ok loading from YAML, JSON, and CSV
+    _data/navigation.yml = can be read by = site.data.navigation
+
+  css:
+    css can be write at:
+      directly at assets/css/styles/scss
+      or have a @import "main"; here, and then, it will read
+      _sass/main.scss
+
+  blog post:
+    must be in this format: the publish date + a title + extension
+    _posts/2018-08-20-bananas.md
+    blogs available as site.posts
+
+  Collections:
+    setting collection name in _config.yml is must, "authors" for example,
+    collection folder:
+      collections' document are stored in: _*collection_name* folder, (so, author = _authors)
+       and by default it is not output, need to set:
+       output: true at _config.yml
+    collection available as sites.authors
+
+  Front matter defaults
+    we can save each page's layout in _config.yml by using
+    defaults: # default is set by scope - values pair
+      - scope:
+          path: "" # an empty string here means all files in the project, or "folder name"
+          type: "authors" # pages, posts, drafts or collections, optional
+        values:
+          layout: "author"
+        ...
+      but, I don't see the value of using it...
+
+>>> i18n?
+  how rails use Jekyll build their marketing site.
+    https://cloudcannon.com/blog/showcase-ruby-on-rails/
+
+>>> themes
+  doc - https://jekyllrb.com/docs/themes/
+  You can have multiple themes listed in your site’s Gemfile, but only one theme can be selected in your site’s _config.yml.
+  GitHub Pages supports the following themes:
+    Architect
+    Cayman
+    Dinky
+    Hacker
+    Leap day
+    Merlot
+    Midnight
+    Minima
+    Minimal
+    Modernist
+    Slate
+    Tactile
+    Time machine
+  or remote_theme: at github, doc: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll#adding-a-jekyll-theme-in-your-sites-_configyml-file
+
+
+deployment
+  >> https://jekyllrb.com/docs/step-by-step/10-deployment/
+  >> set gemfile
+  >> add SEO... plugins, should specific in _config.yml, as github page read it.
+  JEKYLL_ENV=production bundle exec jekyll build
+  copy the contents of _site to your server.
+
+  >> auto deploy to github pages.
+  https://jekyllrb.com/docs/continuous-integration/github-actions/
+
+
+https://jekyllrb.com/docs/
