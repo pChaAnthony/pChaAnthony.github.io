@@ -126,13 +126,47 @@ Learning: on jekyll 4.2.2
     Time machine
   or remote_theme: at github, doc: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll#adding-a-jekyll-theme-in-your-sites-_configyml-file
 
+test:
+  bundle exec jekyll serve
+    http://127.0.0.1:4000
+
+environemt:
+  bundle
+    add:
+      bundle add jekyll
+      or
+      add in Gemfile:
+        bundle install
+    update:
+      bundle update
+    test/exec:
+      bundle exec jekyll serve
+
 
 deployment
-  >> https://jekyllrb.com/docs/step-by-step/10-deployment/
-  >> set gemfile
-  >> add SEO... plugins, should specific in _config.yml, as github page read it.
-  JEKYLL_ENV=production bundle exec jekyll build
-  copy the contents of _site to your server.
+  cd ~/huzzii_web
+    or cd /Users/Anthony/huzzii_web
+  git status
+  git add --all
+  git commit -m "xxxx"
+  git push
+
+  GitHub's action will auto build/deploy:
+    https://pchaanthony.github.io/
+
+  Try/learning:
+    GitHub 有個 actions 很厲害，commit/push 後，它會自動將 Jekyll 的 _site 檔案 deploy 到成網案，所以根本就不需要再做自動 deploy 的動作。
+
+Production ONLY - Pending
+  we don't have anything need to set to production only, so:
+  JEKYLL_ENV not in used yet:
+    https://jekyllrb.com/docs/step-by-step/10-deployment/
+    code:
+      {% if jekyll.environment == "production" %}
+        <script src="my-analytics-script.js"></script>
+      {% endif %}
+    deploy:
+      JEKYLL_ENV=production bundle exec jekyll build
 
   >> auto deploy to github pages.
   https://jekyllrb.com/docs/continuous-integration/github-actions/

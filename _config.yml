@@ -17,3 +17,9 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
