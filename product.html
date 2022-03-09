@@ -1,0 +1,15 @@
+---
+
+title: Products
+---
+<h1>Products</h1>
+
+<ul>
+  {% for product in site.products %}
+    <li>
+      <h2><a href="{{ product.url }}">{{ product.name }}</a></h2>
+      <h3>{{ product.position }}</h3>
+      <p>{{ product.content | markdownify }}</p>
+    </li>
+  {% endfor %}
+</ul>

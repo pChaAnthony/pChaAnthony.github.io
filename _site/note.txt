@@ -39,7 +39,7 @@ Install jekyll:
 from root:
   jekyll serve = jekyll build + runs it on a local web server at http://localhost:4000
 
-Learning: on jekyll 4.2.2
+Learning: on jekyll 4.2.2, later use github_page gem, it is now jekyll 3.9.0
   Liquid:
     {{ page.title }}
 
@@ -130,12 +130,6 @@ test:
   bundle exec jekyll serve
     http://127.0.0.1:4000
 
-Theme:
-  minima:
-    bundle add minima
-    test: not working...
-    _config.yml - add: theme: minima
-
 environemt:
   bundle
     add:
@@ -147,7 +141,6 @@ environemt:
       bundle update
     test/exec:
       bundle exec jekyll serve
-
 
 deployment
   cd ~/huzzii_web
@@ -170,13 +163,15 @@ Try/learning:
     # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
     # uncomment the line below. To upgrade, run `bundle update github-pages`.
     # gem "github-pages", group: :jekyll_plugins
-    but when I follow it, it pop up:
+    but when I follow it, and run gem install or gem update, it pop up:
       jekyll-feed (>= 0.16.0)
       jekyll-seo-tag (>= 2.8.0)...
     delete gemfile.lock, re-run bundle update.
     now, ok, but:
     jekyll 3.9.0
     ok, this is the correct way, as Githut only accept certain version.
+    ref: https://pages.github.com/versions/
+    test: upload to GitHub, test ok
 
 Production ONLY - Pending
   we don't have anything need to set to production only, so:
@@ -189,8 +184,20 @@ Production ONLY - Pending
     deploy:
       JEKYLL_ENV=production bundle exec jekyll build
 
-  >> auto deploy to github pages.
-  https://jekyllrb.com/docs/continuous-integration/github-actions/
+  auto deploy to github pages:
+    https://jekyllrb.com/docs/continuous-integration/github-actions/
+    look like no needs.
 
 
 https://jekyllrb.com/docs/
+
+Theme:
+
+  minima:
+    bundle add minima
+    test: not working...
+    _config.yml - add: theme: minima
+
+    index.html layout (change in _config.yml) switch from default to home, everything changed... why?
+
+  so, question is: How to use Jekyll's theme?
