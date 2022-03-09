@@ -130,6 +130,12 @@ test:
   bundle exec jekyll serve
     http://127.0.0.1:4000
 
+Theme:
+  minima:
+    bundle add minima
+    test: not working...
+    _config.yml - add: theme: minima
+
 environemt:
   bundle
     add:
@@ -154,8 +160,23 @@ deployment
   GitHub's action will auto build/deploy:
     https://pchaanthony.github.io/
 
-  Try/learning:
-    GitHub 有個 actions 很厲害，commit/push 後，它會自動將 Jekyll 的 _site 檔案 deploy 到成網案，所以根本就不需要再做自動 deploy 的動作。
+Try/learning:
+  GitHub 有個 actions 很厲害，commit/push 後，它會自動將 Jekyll 的 _site 檔案 deploy 到成網案，所以根本就不需要再做自動 deploy 的動作。
+  add gemfile -
+    jekyll version and plugins: deploy test ok.
+
+  github-pages gem?
+    in the NEWly created by Jekyll gemfiles there is a remark:
+    # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
+    # uncomment the line below. To upgrade, run `bundle update github-pages`.
+    # gem "github-pages", group: :jekyll_plugins
+    but when I follow it, it pop up:
+      jekyll-feed (>= 0.16.0)
+      jekyll-seo-tag (>= 2.8.0)...
+    delete gemfile.lock, re-run bundle update.
+    now, ok, but:
+    jekyll 3.9.0
+    ok, this is the correct way, as Githut only accept certain version.
 
 Production ONLY - Pending
   we don't have anything need to set to production only, so:
