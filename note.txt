@@ -221,6 +221,8 @@ Theme:
 
     app-ads.txt:
       add file+content in root,
-      test: http://127.0.0.1:4000/app-ads.txt, it shown, let's see wet 
+      test:
+        http://127.0.0.1:4000/app-ads.txt, it shown, let's see wet
+        https://pchaanthony.github.io/app-ads.txt - ok, good.
 
     markdown ref: https://daringfireball.net/projects/markdown/basics

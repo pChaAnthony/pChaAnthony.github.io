@@ -3,13 +3,14 @@
 title: Products
 ---
 <h1>Products</h1>
-
+<br />
 <ul>
   {% for product in site.products %}
     <li>
+      <b>{{ product.category }}</b><br /><br />
       <h2><a href="{{ product.url }}">{{ product.name }}</a></h2>
-      <h3>{{ product.position }}</h3>
-      <p>{{ product.content | markdownify }}</p>
+      <p>{{ product.summary }}</p>
     </li>
+    <br />
   {% endfor %}
 </ul>
