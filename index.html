@@ -2,5 +2,30 @@
 
 title: HUzzii
 ---
-<h1>The very 1st file ++ +</h1>
-<h1>{{ "Hello big World!" | downcase }}</h1>
+<h1>We love Tech, any of it</h1>
+<br />
+
+<h2>Latest News</h2>
+<!-- show 3 news in reverse blog time -->
+<ul>
+  {% for post in site.posts | sort: "last", limit: 3 %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      {{ post.excerpt | truncate: 156 }}
+    </li>
+  {% endfor %}
+</ul>
+
+<br />
+
+<h2>Products</h2>
+<!-- show all product -->
+<ul>
+  {% for product in site.products %}
+    <li>
+      <h2><a href="{{ product.url }}">{{ product.name }}</a></h2>
+      <h3>{{ product.position }}</h3>
+      <p>{{ product.content | markdownify }}</p>
+    </li>
+  {% endfor %}
+</ul>

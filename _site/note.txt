@@ -196,8 +196,31 @@ Theme:
   minima:
     bundle add minima
     test: not working...
-    _config.yml - add: theme: minima
+    _config.yml -
+      add:
+        theme: minima
+        index.html layout (change in _config.yml) switch from default to home, everything changed... why?
+    so, question is: How to use Jekyll's theme?
+      found it, basically, it load the default 1st, and then, override by local.
 
-    index.html layout (change in _config.yml) switch from default to home, everything changed... why?
+  minimal: we use this, after using github_page gem, it already bundle installed.
 
-  so, question is: How to use Jekyll's theme?
+    _config.yml:
+      remote_theme: pages-themes/minimal@v0.2.0
+
+    download minimal theme to local:
+      _layouts/default.html: change it.
+      assets/css/style.css:
+        @import "{{ site.theme }}"; # as we use
+        add navigation css.
+          ref: https://www.w3schools.com/css/css_navbar.asp
+
+    add:
+      privacy.md
+      service.md
+
+    app-ads.txt:
+      add file+content in root,
+      test: http://127.0.0.1:4000/app-ads.txt, it shown, let's see wet 
+
+    markdown ref: https://daringfireball.net/projects/markdown/basics
