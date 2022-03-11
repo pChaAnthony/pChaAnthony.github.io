@@ -31,7 +31,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 #github_username:  jekyll
 show_downloads: false # github pages-themes to show download or not
-#google_analytics: [Your Google Analytics tracking ID]
+google_analytics: UA-215802950-1
 github:
   - is_project_page: false
   - is_user_page: false

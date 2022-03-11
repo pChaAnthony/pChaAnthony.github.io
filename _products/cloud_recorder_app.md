@@ -6,6 +6,9 @@ summary: Android App to Play and Record Audio via using Google Drive
 ---
 # HUzzii Cloud Recorder & Player App for Android   
 
+![Cloud Recorder Features](/assets/img/feature_graphic.png)
+
+### [* Click to Install Cloud Recorder App now!](https://play.google.com/store/apps/details?id=com.huzzii.cloud_recorder){:target="_blank"}
 
 ## Download & Playback from Google Drive
 Just put your audio files in folders' name containing "huzzii audio", you can than download and play it here.
@@ -25,6 +28,12 @@ Your "Huzzii audio" folder can also access via our [Web Cloud Recorder](https://
 ## Android only for now
 
 App is ready to download at [Google Play Store](https://play.google.com/store/apps/details?id=com.huzzii.cloud_recorder), Apple iOS version is ready but not released, we don't like what Apple's over charge on app developer, can you believe Apple request developer to pay US$100 annual fee?  
+
+## demo
+
+Check out our Web App demo, the usage and UI are the same.
+<iframe width="320" height="260" src="https://www.youtube.com/embed/YXgKaAL38jc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   <br />
+
 
 ### Technical Detail:
 * Recorded audio will be saved into Google Drive's folder name “Huzzii Audio”, you can rename the folder freely as long as it contain "huzzii audio", ex. “Mary's huzzii audio v 3”, easier management.
