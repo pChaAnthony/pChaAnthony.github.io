@@ -23,6 +23,8 @@ end
 
 gem "minima", "~> 2.5"
 
+# multi-languages
+gem 'jekyll-multiple-languages-plugin', group: :jekyll_plugins # https://github.com/kurtsson/jekyll-multiple-languages-plugin
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

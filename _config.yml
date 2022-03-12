@@ -36,6 +36,12 @@ github:
   - is_project_page: false
   - is_user_page: false
 
+# multi-languages/i18n
+# The first item of languages will be used as the default.
+languages: ["en", "zh", "zh-tw"]
+exclude_from_localizations: ["js", "img", "css", "favicon.ico"]
+default_locale_in_subfolder: false
+
 # Build settings
 #theme: minima
 #remote_theme: pages-themes/merlot@v0.2.0
@@ -45,3 +51,4 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-multiple-languages-plugin

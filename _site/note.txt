@@ -150,6 +150,13 @@ deployment
   git commit -m "xxxx"
   git push
 
+  // got error on error: failed to push some refs to 'github.com:pChaAnthony/pChaAnthony.github.io.git'
+    hint: Updates were rejected because the remote contains work that you do
+    hint: not have locally. This is usually caused by another repository pushing...
+    what I did is:
+    ref: https://gitbook.tw/chapters/github/fail-to-push
+  git pull --rebase
+
   GitHub's action will auto build/deploy:
     https://pchaanthony.github.io/
 
@@ -231,9 +238,53 @@ Theme:
     just add the embedded youtube code in, markdown is ok with raw HTML.
 
 
-> product images
+custom domain link:
+  setting:
+    https://github.com/pChaAnthony/pChaAnthony.github.io/settings/pages
+  try www.huzzii.com... but always got error..
+  switch/add huzzii.com, follow this blog:
+    https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58
+  still got error:
+    Both huzzii.com and its alternate name are improperly configured
+    Domain does not resolve to the GitHub Pages server. For more information,
+    see Learn more (NotServedByPagesError).
+    We recommend you add an A record pointed to our IP addresses,
+    or an ALIAS record pointing to pchaanthony.github.io.
+  but, the HTTPs is on, and when I try www.huzzii.com, it jump to huzzii.com with SSL.
+  actually, just 2 hours after, reload page, all the error gone.
+  now, github page linked with huzzii.com and www.huzzii.com will auto routed
 
->>> multi-languages
+
+multi-languages
+  will use: https://github.com/kurtsson/jekyll-multiple-languages-plugin gem, follow it instructions:
+
+  Install gem: follow it 3.1. Using the gem:
+    gemfile:
+      add: gem 'jekyll-multiple-languages-plugin', group: :jekyll_plugins
+        note: It won't work if not put 'group: :jekyll_plugins'.
+      bundle install
+        Installing jekyll-multiple-languages-plugin 1.8.0
+
+    _config.yml:
+      add:
+        plugins:
+          - jekyll-multiple-languages-plugin
+        languages: ["en", "zh", "zh-tw"]
+        exclude_from_localizations: ["js", "img", "css", "favicon.ico"]
+
+    ?? In code, these specific files should be referenced via baseurl_root. E.g.
+      <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl_root }}"/>
+
+  _i18n folders:
+
+    move products into language/_products/.
+
+  is github page not suppport?
+    https://www.klaasnotfound.com/2017/02/16/proper-multilingual-site-with-github-pages-and-jekyll/
+
+    try about
+
+
 
 theme jekyll-theme-minimal-0.2.0
   /Users/Anthony/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jekyll-theme-minimal-0.2.0
@@ -274,7 +325,7 @@ google analytics
       ga('send', 'pageview');
     </script>
 
-  let's just use the jekyll-theme-minimal way.
+  Decided: use the jekyll-theme-minimal way, I can change it back anytime.
     change:
       _config.yml:
         google_analytics: UA-215802950-1
@@ -284,21 +335,7 @@ google analytics
         {% include head-custom-google-analytics.html %}
       {% endif %}
 
-custom domain link:
-  setting:
-    https://github.com/pChaAnthony/pChaAnthony.github.io/settings/pages
-  try www.huzzii.com... but always got error..
-  switch/add huzzii.com, follow this blog:
-    https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58
-  still got error:
-    Both huzzii.com and its alternate name are improperly configured
-    Domain does not resolve to the GitHub Pages server. For more information,
-    see Learn more (NotServedByPagesError).
-    We recommend you add an A record pointed to our IP addresses,
-    or an ALIAS record pointing to pchaanthony.github.io.
-  but, the HTTPs is on, and when I try www.huzzii.com, it jump to huzzii.com with SSL.
-  actually, just 2 hours after, reload page, all the error gone.
-  now, github page linked with huzzii.com and www.huzzii.com will auto routed
+  check GA: yes, it works.
 
 app-ads.txt
   show when https://huzzii.com/app-ads.txt

@@ -15,6 +15,15 @@
   <body>
     <div class="wrapper">
       <header>
+
+        {% for lang in site.languages %}
+          {% if forloop.index0 == 0 %}
+            <a href="{{ page.url }}" class="footer__link">{{ lang }}</a>
+          {% else %}
+            |<a href="/{{ lang }}{{ page.url }}" class="footer__link">{{ lang }}</a>
+          {% endif %}
+        {% endfor %}
+
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}

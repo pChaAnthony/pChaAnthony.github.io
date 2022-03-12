@@ -2,10 +2,10 @@
 
 title: HUzzii
 ---
-<h1>We love Tech, any of it</h1>
+<h1>TC We love Tech, any of it</h1>
 <br />
 
-<h2>{% translate index.latest_news %}</h2>
+<h2>最新消息</h2>
 <!-- show 3 news in reverse blog time -->
 <ul>
   {% assign posts_items = site.posts | sort: 'date' | reverse %}
@@ -21,7 +21,7 @@ title: HUzzii
 <h2>Products</h2>
 <!-- show all product -->
 <ul>
-  {% for product in site.products %}
+  {% for product in site.translations[site.lang].products %}
     <li>
       <h2><a href="{{ product.url }}">{{ product.name }}</a></h2>
       <p>{{ product.summary | truncate: 156 }}</p>
