@@ -234,7 +234,10 @@ Theme:
         http://127.0.0.1:4000/app-ads.txt, it shown, let's see wet
         https://pchaanthony.github.io/app-ads.txt - ok, good.
 
-    markdown ref: https://daringfireball.net/projects/markdown/basics
+    markdown ref:
+      https://www.markdownguide.org/cheat-sheet/
+      https://www.markdownguide.org/hacks/#image-size
+      https://daringfireball.net/projects/markdown/basics
 
   add video:
     just add the embedded youtube code in, markdown is ok with raw HTML.
@@ -369,3 +372,7 @@ app-ads.txt
   show when https://huzzii.com/app-ads.txt
   add to google play store and confirmed store show the correct url. (2022-3-11 0am)
   >> but admob not found in 18 hours,
+
+adsense:
+  https://ncona.com/2020/11/monetizing-a-jekyll-blog-with-adsense/
+  pending.

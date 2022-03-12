@@ -23,7 +23,7 @@ Share audio is never easier, just share your Google Drives' "huzzii audio" folde
 CoDec support is purely depend on your Browser's capability, but, MP3, wave,... are normally ok, try it.
 
 ## demo
-<iframe width="320" height="260" src="https://www.youtube.com/embed/YXgKaAL38jc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Huzzii Cloud Recorder & Player demo video](https://img.youtube.com/vi/YXgKaAL38jc/0.jpg)](https://www.youtube.com/watch?v=YXgKaAL38jc)
 
 <br />
 

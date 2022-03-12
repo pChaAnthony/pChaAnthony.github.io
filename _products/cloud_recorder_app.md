@@ -31,8 +31,9 @@ App is ready to download at [Google Play Store](https://play.google.com/store/ap
 
 ## demo
 
-Check out our Web App demo, the usage and UI are the same.
-<iframe width="320" height="260" src="https://www.youtube.com/embed/YXgKaAL38jc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   <br />
+[![Huzzii Cloud Recorder & Player demo video](https://img.youtube.com/vi/YXgKaAL38jc/0.jpg)](https://www.youtube.com/watch?v=YXgKaAL38jc)
+
+<br />
 
 
 ### Technical Detail:
