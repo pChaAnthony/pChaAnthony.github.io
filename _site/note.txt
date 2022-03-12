@@ -126,36 +126,38 @@ Learning: on jekyll 4.2.2, later use github_page gem, it is now jekyll 3.9.0
     Time machine
   or remote_theme: at github, doc: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll#adding-a-jekyll-theme-in-your-sites-_configyml-file
 
-test:
-  bundle exec jekyll serve
-    http://127.0.0.1:4000
+Operation:
 
-environemt:
-  bundle
-    add:
-      bundle add jekyll
-      or
-      add in Gemfile:
-        bundle install
-    update:
-      bundle update
-    test/exec:
-      bundle exec jekyll serve
+  test:
+    bundle exec jekyll serve
+      http://127.0.0.1:4000
 
-deployment
-  cd ~/huzzii_web
-    or cd /Users/Anthony/huzzii_web
-  git status
-  git add --all
-  git commit -m "xxxx"
-  git push
+  environemt:
+    bundle
+      add:
+        bundle add jekyll
+        or
+        add in Gemfile:
+          bundle install
+      update:
+        bundle update
+      test/exec:
+        bundle exec jekyll serve
 
-  // got error on error: failed to push some refs to 'github.com:pChaAnthony/pChaAnthony.github.io.git'
-    hint: Updates were rejected because the remote contains work that you do
-    hint: not have locally. This is usually caused by another repository pushing...
-    what I did is:
-    ref: https://gitbook.tw/chapters/github/fail-to-push
-  git pull --rebase
+  deployment
+    cd ~/huzzii_web
+      or cd /Users/Anthony/huzzii_web
+    git status
+    git add --all
+    git commit -m "xxxx"
+    git push
+
+    // got error on error: failed to push some refs to 'github.com:pChaAnthony/pChaAnthony.github.io.git'
+      hint: Updates were rejected because the remote contains work that you do
+      hint: not have locally. This is usually caused by another repository pushing...
+      what I did is:
+      ref: https://gitbook.tw/chapters/github/fail-to-push
+    git pull --rebase
 
   GitHub's action will auto build/deploy:
     https://pchaanthony.github.io/
@@ -283,6 +285,7 @@ multi-languages
 
     is github page not suppport?
       https://www.klaasnotfound.com/2017/02/16/proper-multilingual-site-with-github-pages-and-jekyll/
+      https://github.com/github/pages-gem/issues/401
 
       try about page 1st, it is working at local, fail after git push...
         Artifact URL: https://pipelines.actions.githubusercontent.com/CWIORMMpjAqSOe6Hh4RKZ8ot1nmMh7SJtXTkG6SBxtqqnnvbg2/_apis/pipelines/workflows/1972848724/artifacts?api-version=6.0-preview
@@ -291,13 +294,24 @@ multi-languages
         Error: Error: No uploaded artifact was found! Please check if there are any errors at build step.
         Error: Error: No uploaded artifact was found! Please check if there are any errors at build step.
       don't understand what it is talking about... but anyway... it is fail...
-      give up, this is not working.
-      try other ways.
+        explain as: http://disq.us/p/1z6yr2g
+          GH pages is just a host for static sites. You can dump HTML files in your repo and
+          they will be served. "Building" a Jekyll site on push is a pure convenience feature:
+          If you push stuff that looks like a Jekyll site, GH pages will attempt to run jekyll
+          build and expose the generated site to the public. Since the associated Jekyll (Ruby)
+          plugin scripts are executed on their own infrastructure, GH will (for understandable
+          reasons) allow only a very limited set of vetted plugins.
+        very reasonable and good explaination...
+          --- so, it is possible by just created a gh-pages branch:
+            https://www.liaohuqiu.net/posts/jekyll-plugins-on-github-pages/
+            https://mincong.io/en/jekyll-i18n/
+        let me give up for now,
+        try other ways, If there are no plugins way... maybe.
 
-  try 2:
-  >>>>
-
-
+  try 2: no plugin
+    https://sylvaindurand.org/making-jekyll-multilingual/
+    ya, look thru, it is possible, but, let's hold the horse here, what's the value
+    to develop a multilingual site for? at least for now, zero value.
 
 
 theme jekyll-theme-minimal-0.2.0
