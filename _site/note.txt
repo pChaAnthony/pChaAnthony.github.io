@@ -256,33 +256,47 @@ custom domain link:
 
 
 multi-languages
-  will use: https://github.com/kurtsson/jekyll-multiple-languages-plugin gem, follow it instructions:
 
-  Install gem: follow it 3.1. Using the gem:
-    gemfile:
-      add: gem 'jekyll-multiple-languages-plugin', group: :jekyll_plugins
-        note: It won't work if not put 'group: :jekyll_plugins'.
-      bundle install
-        Installing jekyll-multiple-languages-plugin 1.8.0
+  try 1: but fail, not workable in github page.
+    use: https://github.com/kurtsson/jekyll-multiple-languages-plugin gem, follow it instructions:
 
-    _config.yml:
-      add:
-        plugins:
-          - jekyll-multiple-languages-plugin
-        languages: ["en", "zh", "zh-tw"]
-        exclude_from_localizations: ["js", "img", "css", "favicon.ico"]
+    Install gem: follow it 3.1. Using the gem:
+      gemfile:
+        add: gem 'jekyll-multiple-languages-plugin', group: :jekyll_plugins
+          note: It won't work if not put 'group: :jekyll_plugins'.
+        bundle install
+          Installing jekyll-multiple-languages-plugin 1.8.0
 
-    ?? In code, these specific files should be referenced via baseurl_root. E.g.
-      <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl_root }}"/>
+      _config.yml:
+        add:
+          plugins:
+            - jekyll-multiple-languages-plugin
+          languages: ["en", "zh", "zh-tw"]
+          exclude_from_localizations: ["js", "img", "css", "favicon.ico"]
 
-  _i18n folders:
+      ?? In code, these specific files should be referenced via baseurl_root. E.g.
+        <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl_root }}"/>
 
-    move products into language/_products/.
+    _i18n folders:
 
-  is github page not suppport?
-    https://www.klaasnotfound.com/2017/02/16/proper-multilingual-site-with-github-pages-and-jekyll/
+      move products into language/_products/.
 
-    try about
+    is github page not suppport?
+      https://www.klaasnotfound.com/2017/02/16/proper-multilingual-site-with-github-pages-and-jekyll/
+
+      try about page 1st, it is working at local, fail after git push...
+        Artifact URL: https://pipelines.actions.githubusercontent.com/CWIORMMpjAqSOe6Hh4RKZ8ot1nmMh7SJtXTkG6SBxtqqnnvbg2/_apis/pipelines/workflows/1972848724/artifacts?api-version=6.0-preview
+        {"count":0,"value":[]}
+        Failed to create deployment for 3dac387624c494dee4f56558b98c678307e7561e.
+        Error: Error: No uploaded artifact was found! Please check if there are any errors at build step.
+        Error: Error: No uploaded artifact was found! Please check if there are any errors at build step.
+      don't understand what it is talking about... but anyway... it is fail...
+      give up, this is not working.
+      try other ways.
+
+  try 2:
+  >>>>
+
 
 
 

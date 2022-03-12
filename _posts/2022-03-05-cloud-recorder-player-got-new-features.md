@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "New Features released for Cloud Recorder & Player"
+title:  "Re-order playlist is now supported for Cloud Recorder & Player"
 product: Web Cloud Recorder
 categories: product
 ---
