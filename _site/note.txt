@@ -371,7 +371,11 @@ google analytics
 app-ads.txt
   show when https://huzzii.com/app-ads.txt
   add to google play store and confirmed store show the correct url. (2022-3-11 0am)
-  >> but admob not found in 18 hours,
+  >> but admob not found in 4 days,
+    adding robots.txt with User-agent: *, ref: https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629
+
+SEO
+  adding robots.txt in root.
 
 adsense:
   https://ncona.com/2020/11/monetizing-a-jekyll-blog-with-adsense/
